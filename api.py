@@ -1,4 +1,4 @@
 import requests
 import json
 
-response= requests.get("")
+response= requests.get("https://www.getexchangr.com")
