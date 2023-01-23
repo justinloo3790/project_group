@@ -17,4 +17,3 @@ if scenario == 2:
         f.write("[CASH DEFICIT] DAY: {}, AMOUNT: USD{}\n".format(day,amt))
         f.write("[CASH DEFICIT] DAY: {}, AMOUNT: USD{}\n".format(day,amt))
         f.write("[PROFIT DEFICIT] DAY: {}, AMOUNT: USD{}\n".format(day,amt))
-        
