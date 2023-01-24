@@ -1,2 +1,2 @@
-salary_expense = 0
-depreciation_expense =0
+expense = 0
+expense_percentage = 0
