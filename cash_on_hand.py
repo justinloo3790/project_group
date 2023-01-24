@@ -42,23 +42,21 @@ for j in range(1,len(cashonhand),2):
     cash_amt.append(cashonhand[j])
 
 
-#Function for finding value on current cash_day higher than the previous cash_day 
 
-
-
-#Calculate which amount is more or less than the previous cash_day and then compiling it into two variables
+#Calculate which amount is more or less than the previous cash_day
 for k in range(0,len(cash_amt)-1,1):
     if float(cash_amt[k+1]) - float(cash_amt[k]) > 0:
         number_of_surplus+=1
 
+    #If its less than the previous day, the lesser amount and the day it falls on will be added into a listS
     if float(cash_amt[k+1]) - float(cash_amt[k]) <= 0:
         cash_deficit_day.append(cash_day[k+1])
         cash_deficit_amt.append(cash_amt[k+1])
 
 
 
-#The summary of the complilation of the results will be compared to each other using the if else and return function
-#to determine whether the surplus cash is higher or lower as a whole 
+#The summary of the results will be compared to each other using the if else
+#to determine whether the surplus cash is higher or lower and if its mixed then it will be referred to as deficit
 if number_of_surplus == len(cash_amt):
     cash_results = "HIGHER"
     cash_details = "CASH SURPLUS"
