@@ -7,30 +7,30 @@ import csv
 cashonhand = []
 cash_deficit_day = []
 cash_deficit_amt = []
-cash_day = []
-cash_amt = []
+cash_day = [40,41,42,43,44,45,46,47,48,49,50]
+cash_amt = [252049,40978,158019,250235,36039,36176,162363,130695,525331,26248,71961]
 cash_results = 0
 cash_details = 0
 number_of_surplus = 0
 
 
-#Creating file path for the excel
-file_path = Path.home()/"Documents"/"GitHub"/"project_group"/"cash-on-hand-usd.csv"
+# #Creating file path for the excel
+# file_path = Path.home()/"Documents"/"GitHub"/"project_group"/"cash-on-hand-usd.csv"
 
-# create 'reader' object and print line if file path exists
-with file_path.open(mode = "r",encoding = "UTF-8", newline="") as file:
+# # create 'reader' object and print line if file path exists
+# with file_path.open(mode = "r",encoding = "UTF-8", newline="") as file:
 
-    # instantiate a reader object
-    reader = csv.reader(file)
-    # use `next()` to skip the header.
-    next(reader)
+#     # instantiate a reader object
+#     reader = csv.reader(file)
+#     # use `next()` to skip the header.
+#     next(reader)
 
 
-# Create nested loop to access each value in the list
-# and append the value to the dict.
-    for line in reader:
-            for value in line:
-                cashonhand.append(value)
+# # Create nested loop to access each value in the list
+# # and append the value to the dict.
+#     for line in reader:
+#             for value in line:
+#                 cashonhand.append(value)
 
 
 #Add all the cash_days into a list
