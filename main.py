@@ -3,8 +3,8 @@ from overheads import *
 from profit_and_loss import *
 
 def main():
+    overheads()
     coh()
-    # overheads()
     # profit_loss()
 
 main()

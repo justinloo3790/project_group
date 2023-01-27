@@ -36,12 +36,12 @@ def profit_loss():
 
 
 
-    with open("summary_report.txt", "w") as f:
+    with open("summary_report.txt", "a") as f:
         
         if profit_results == 0:
 
             for m in range (len(profit_deficit_amt)):
-                f.write("[{0}}] DAY: {1}, AMOUNT: USD {2}\n".format(profit_details,profit_deficit_day[m],profit_deficit_amt[m]))
+                f.write("[{0}] DAY: {1}, AMOUNT: USD {2}\n".format(profit_details,profit_deficit_day[m],profit_deficit_amt[m]))
         
         else:
             f.write("[{0}] NET PROFIT ON EACH DAY IS {1} THAN THE PREVIOUS DAY\n".format(profit_details,profit_results))
