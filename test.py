@@ -12,7 +12,7 @@ with open('cash-on-hand-usd.csv', 'r') as file:
     total_amt = 0
     #This is to assign an empty dictionary to the "day_amt" which will later store the day number and the total amount for that day
     day_amt = {}
-    #This is to create a for loop which will iterate each row in the .csv file, extracting the date and 
+    #This is to create a for loop which will iterate each row in the .csv file
     for row in reader:
         #This is to get the day on the .csv file using index position 0, which will be changed to integer data type and assigned to the "current_day" variable
         current_day = int(row[0])

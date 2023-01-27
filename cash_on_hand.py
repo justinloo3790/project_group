@@ -32,7 +32,7 @@ number_of_surplus = 0
 #             for value in line:
 #                 cashonhand.append(value)
 
-
+print(len(cashonhand))
 #Add all the cash_days into a list
 for i in range(0,len(cashonhand),2):
     cash_day.append(cashonhand[i])
