@@ -32,7 +32,7 @@ def coh():
         #If its less than the previous day, the lesser amount and the day it falls on will be added into a listS
         if float(cashonhand[k+2]) - float(cashonhand[k]) <= 0:
             cash_deficit_day.append(cashonhand[k+1])
-            cash_deficit_amt.append(cashonhand[k+2])
+            cash_deficit_amt.append(abs(int(cashonhand[k+2]) - int(cashonhand[k])))
 
     #The summary of the results will be compared to each other using the if else
     #to determine whether the surplus cash is higher or lower and if its mixed then it will be referred to as deficit
