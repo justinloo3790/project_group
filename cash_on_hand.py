@@ -1,7 +1,7 @@
 # Import csv module
 import csv
 
-def coh():
+def coha():
     #Lists and variables
     cashonhand = []
     cash_deficit_day = []
