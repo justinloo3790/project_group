@@ -23,7 +23,7 @@ def overheads():
                 for value in line:
                     expense.append(value)
 
-    # append the category and overheads as a list back into the empty list respectivetly
+    # append the category and overheads as a list back into the empty list respectively
     for n in range(1,len(expense),2):
         for o in range (1,len(expense),2):
             if float(expense[n]) >= float(expense[o]):
@@ -35,3 +35,4 @@ def overheads():
 
     with open("summary_report.txt", "w") as f:
         f.write("[HIGHEST OVERHEADS] {}: {}%\n".format(expense_type.upper(),expense_percent))
+    
