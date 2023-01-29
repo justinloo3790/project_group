@@ -27,7 +27,7 @@ def overheads():
     # append the category and overheads as a list back into the empty list respectively
     for n in range(1,len(expense),2):
         for o in range (1,len(expense),2):
-            if float(expense[n]) >= float(expense[o]):
+            if float(expense[n]) > float(expense[o]):
                 expense_percent = expense[n]
                 expense_type = expense[n-1]
             else:
