@@ -24,6 +24,7 @@ def coh():
                 for value in line:
                     cashonhand.append(value)
 
+
     #Calculate which amount is more or less than the previous cash_day
     for k in range(1,len(cashonhand)-1,2):
         if float(cashonhand[k+2]) - float(cashonhand[k]) > 0:
@@ -56,3 +57,5 @@ def coh():
         
         else:
             f.write("[{0}] CASH ON EACH DAY IS {1} THAN THE PREVIOUS DAY\n".format(cash_details,cash_results))
+
+coh()
