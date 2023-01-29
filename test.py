@@ -27,6 +27,7 @@ def coh():
     for key, value in data.items():
         if previous_value != "" and value < previous_value:
             differences[key] = previous_value - value
+            
         # Initializing by assigning the first value to "previous_value"
         previous_value = value
 
