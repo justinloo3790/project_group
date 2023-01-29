@@ -1,7 +1,7 @@
 # Import csv module
 import csv
 
-def coha():
+def coh():
     #Lists and variables
     cashonhand = []
     cash_deficit_day = []
@@ -66,6 +66,3 @@ def coha():
         
         else:
             f.write("[{0}] CASH ON EACH DAY IS {1} THAN THE PREVIOUS DAY\n".format(cash_details,cash_results))
-
-#To print the cash on hand out
-coh()
