@@ -36,9 +36,9 @@ def coh():
             number_of_surplus+=1
 
         #If its less than the previous day, the shortaged amount and its day will be added into a list respectiviely.
-        elif float(cashonhand[k+2]) <= float(cashonhand[k]):
+        elif int(cashonhand[k+2]) <= int(cashonhand[k]):
 
-            cash_deficit_amt.append(abs(int(cashonhand[k+2]) - int(cashonhand[k])))
+            cash_deficit_amt.append(int(cashonhand[k]) - int(cashonhand[k+2]))
 
             cash_deficit_day.append(cashonhand[k+1])
 
