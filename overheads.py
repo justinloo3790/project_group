@@ -1,4 +1,3 @@
-# import overhead csv
 import csv
 
 def overheads():
@@ -7,6 +6,7 @@ def overheads():
     expense = []
     expense_percent = 0
     expense_type = 0
+    expense_amt = 0
 
     #Creating file path for the excel
     with open('csv_reports/overheads-day-90.csv', 'r') as file:
@@ -23,16 +23,16 @@ def overheads():
                 for value in line:
                     expense.append(value)
 
-
-    # append the category and overheads as a list back into the empty list respectively
+    # append the category and overheads as a list back into the empty list respectivetly
     for n in range(1,len(expense),2):
         for o in range (1,len(expense),2):
             if float(expense[n]) >= float(expense[o]):
                 expense_percent = expense[n]
                 expense_type = expense[n-1]
-                
             else:
                 break
-
+    
     with open("summary_report.txt", "w") as f:
         f.write("[HIGHEST OVERHEADS] {}: {}%\n".format(expense_type.upper(),expense_percent))
+
+print(overheads())
