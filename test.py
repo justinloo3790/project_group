@@ -40,3 +40,18 @@ print(day_amt)
 
 
 
+<<<<<<< HEAD
+=======
+    # Iterates the items in "data" dictionary
+    # If "previous_value" is not empty and "value" is less than "previous_value", "differences" will store the day as key and deficit amount as value
+    for key, value in data.items():
+        if previous_value != "" and value < previous_value:
+            differences[key] = previous_value - value
+        # Initializing by assigning the first value to "previous_value"
+        previous_value = value
+
+    # Iterates items in "differences" dictionary and prints a message
+    with open("summary_report.txt", "a") as txtfile:
+        for key, value in differences.items():
+            txtfile.write(f"[CASH DEFICIT] DAY: {key}, AMOUNT: USD {value}\n")     
+>>>>>>> f6355052eca6208927a17366525dd8ccef8a45b7
