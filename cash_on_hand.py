@@ -55,7 +55,7 @@ def coh():
     else:
         cash_details = "CASH DEFICIT"
 
-    #Iterates items in the list and prints a message showing details of the 
+    #Iterates items in the list and prints a message showing details of
     #whether it is cash surplus, cash shortage or cash deficit with the amounts and day.
     with open("summary_report.txt", "a") as f:
 
