@@ -32,6 +32,7 @@ def overheads():
             else:
                 break
     
-
     with open("summary_report.txt", "w") as f:
         f.write("[HIGHEST OVERHEADS] {}: {}%\n".format(expense_type.upper(),expense_percent))
+
+print(overheads())
