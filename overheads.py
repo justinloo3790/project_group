@@ -1,38 +1,21 @@
+# import overhead csv
 import csv
 
-def overheads():
 
-    # create empty lists to store the category and overheads 
-    expense = []
-    expense_percent = 0
-    expense_type = 0
-    expense_amt = 0
-
-    #Creating file path for the excel
+def highest_overhead():
+    # "open" function is used to open the "cash-on-hand-usd.csv" in read mode and assign it to "file" variable
     with open('csv_reports/overheads-day-90.csv', 'r') as file:
-
-        # instantiate a reader object
+        # csv.reader is used to create a reader object for the file
         reader = csv.reader(file)
-        # use `next()` to skip the header.
+        # Skips the header row of the csv file
         next(reader)
 
-
-    # Create nested loop to access each value in the list
-    # and append the value to the dict.
-        for line in reader:
-                for value in line:
-                    expense.append(value)
-
-    # append the category and overheads as a list back into the empty list respectivetly
-    for n in range(1,len(expense),2):
-        for o in range (1,len(expense),2):
-            if float(expense[n]) >= float(expense[o]):
-                expense_percent = expense[n]
-                expense_type = expense[n-1]
-            else:
-                break
-    
-    with open("summary_report.txt", "w") as f:
-        f.write("[HIGHEST OVERHEADS] {}: {}%\n".format(expense_type.upper(),expense_percent))
-
-print(overheads())
+        categories = []
+        overheads = []
+        
+        for category,overhead in reader:
+            categories.append(category)
+            overheads.append(float(overhead))
+    highest_overhead_index = overheads.index(max(overheads))
+    with open("summary_report.txt", "w") as txtfile:
+        txtfile.write(f"[HIGHEST OVERHEADS] {categories[highest_overhead_index].upper()}: {overheads[highest_overhead_index]}%\n")
