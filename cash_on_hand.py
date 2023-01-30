@@ -29,7 +29,7 @@ def coh():
         if float(cashonhand[k+2]) - float(cashonhand[k]) > 0:
             number_of_surplus+=1
 
-        #If its less than the previous day, the differentiated amount and the day it falls on will be added into a listS
+        #If its less than the previous day, the differentiated amount and the day it falls on will be added into a list
         if float(cashonhand[k+2]) - float(cashonhand[k]) <= 0:
             cash_deficit_day.append(cashonhand[k+1])
             cash_deficit_amt.append(abs(int(cashonhand[k+2]) - int(cashonhand[k])))
