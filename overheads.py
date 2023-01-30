@@ -1,30 +1,37 @@
-# import overhead csv
 import csv
-
-name = 0
-amount = 0
 
 def overheads():
 
+    # create empty lists to store the category and overheads 
     expense = []
-    global name, amount
-    
-    with open('csv_reports/overheads-day-90.csv', "r") as file:
-        reader = csv.reader(file)
-        next(reader)
-        
-        for line in reader:
-             for value in line:
-                  expense.append(value)
-                  
-    for i in range(0,len(expense),2):
-        for x in range(0,len(expense),2):
-           if float(expense[i+1]) >= amount[i-1]:
-            name, amount = expense[i], float(expense[i+1])
-           else:
-               break
-           return name, amount
-           
+    expense_percent = 0
+    expense_type = 0
+    expense_amt = 0
 
-with open("summary_report.txt", "w") as reportFile:
-        reportFile.write(f'[HIGHEST OVERHEADS] {name}: {amount}%')
+    #Creating file path for the excel
+    with open('csv_reports/overheads-day-90.csv', 'r') as file:
+
+        # instantiate a reader object
+        reader = csv.reader(file)
+        # use `next()` to skip the header.
+        next(reader)
+
+
+    # Create nested loop to access each value in the list
+    # and append the value to the dict.
+        for line in reader:
+                for value in line:
+                    expense.append(value)
+
+    # append the category and overheads as a list back into the empty list respectivetly
+    for n in range(1,len(expense),2):
+        for o in range (1,len(expense),2):
+            if float(expense[n]) >= float(expense[o]):
+                expense_percent = expense[n]
+                expense_type = expense[n-1]
+            else:
+                break
+    
+
+    with open("summary_report.txt", "w") as f:
+        f.write("[HIGHEST OVERHEADS] {}: {}%\n".format(expense_type.upper(),expense_percent))
