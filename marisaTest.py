@@ -1,27 +1,21 @@
 # import overhead csv
 import csv
 
-name = 0
-amount = 0
 
 def overheadsTest():
-
-    expense = []
-    
-    with open('csv_reports/overheads-day-90.csv', "r") as file:
+    # "open" function is used to open the "cash-on-hand-usd.csv" in read mode and assign it to "file" variable
+    with open('csv_reports/overheads-day-90.csv', 'r') as file:
+        # csv.reader is used to create a reader object for the file
         reader = csv.reader(file)
+        # Skips the header row of the csv file
         next(reader)
-        
-        for line in reader:
-             for value in line:
-                  expense.append(value)
-                  
-    for i in range(0,len(expense),2):
-        for x in range(0,len(expense),2):
-           if float(expense[i+1]) >= amount:
-            name, amount = expense[i], float(expense[i+1])
-           else:
-               break
 
-    with open("summary_report.txt", "w") as reportFile:
-        reportFile.write(f'[HIGHEST OVERHEADS] {name}: {amount}%')
+        #
+        cat_overheads = {}
+
+        # Iterates rows in csv file containing days as first element and cash amount as second using for loop
+        # "data" dictionary will store the day as key and cash amount as value, which is converted to int data taype
+        for category, oh in reader:
+            cat_overheads[(category)] = oh
+
+        for 
